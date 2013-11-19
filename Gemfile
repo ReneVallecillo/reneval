@@ -35,6 +35,13 @@ group :development, :test do
 	gem 'sqlite3', '1.3.8'
 	# Rspec for TDD testing
 	gem 'rspec-rails','2.13.1'
+	#Guard for reloading test framework on the fly
+	gem 'guard-rspec', '2.5.0'
+
+	#spork to speedup tests
+	gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.9'
 end
 
 group :production do
