@@ -14,4 +14,9 @@
 #
 
 class Client < ActiveRecord::Base
+
+
+  validates :name, presence: true, length: { in: 3..25 }, uniqueness: { case_sensitive: false }
+  validates :fullname, presence: true
+  validates :ruc, presence: true
 end
