@@ -1,0 +1,32 @@
+<h1>Clients#index</h1>
+<p>Find me in app/views/clients/index.html.erb</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Razón Social</th>
+      <th>RUC</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.name %></td>
+      <td><%= client.fullname %></td>
+      <td><%= client.ruc %></td>
+      <td>
+        <button class="btn btn-default">
+          <%= link_to client do %>
+          <span class="glyphicon glyphicon-eye-open"></span>
+          <% end %>
+        </button>
+        <button class="btn btn-default btn-warning">
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
