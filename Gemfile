@@ -31,6 +31,13 @@ gem 'jbuilder', '~> 1.2'
 #authentication
 gem 'devise'
 
+#forms
+gem 'formtastic'
+
+#bootstrap 3 markup for formtastic
+gem 'formtastic-bootstrap'
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
