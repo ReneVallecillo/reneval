@@ -18,5 +18,7 @@ class Client < ActiveRecord::Base
 
   validates :name, presence: true, length: { in: 3..25 }, uniqueness: { case_sensitive: false }
   validates :fullname, presence: true
-  validates :ruc, presence: true
+  VALID_RUC_FORMAT = /\A(J|\d){1}[A-Z0-9]{13}$\Z/
+  validates :ruc, presence: true, :format => { with: VALID_RUC_FORMAT }
+
 end

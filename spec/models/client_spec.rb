@@ -18,7 +18,7 @@ require 'spec_helper'
 describe Client do
   before do
     @client = Client.new(name: "Example", fullname: "Example",
-              ruc: "J1234567891011", legalrepresentative: "Example Representative",
+              ruc: "J1234567891112", legalrepresentative: "Example Representative",
               address: "Example address", web:"www.Example.com")
   end
 
@@ -67,6 +67,27 @@ describe Client do
     end
 
     it { should_not be_valid }
+  end
+
+  describe "when RUC format is invalid" do
+    it "should be invalid" do
+      rucs = %w[j1234567891011 j123456789 h1234567891112 123456789001112
+        1234567890222222]
+      rucs.each do |invalid_ruc|
+        @client.ruc = invalid_ruc
+        expect(@client).not_to be_valid
+      end      
+    end
+  end
+
+  describe "when RUC format is valid" do
+    it "should be valid" do
+      rucs = %w[J1234567891011 J1211987654321 0012311840018C]
+      rucs.each do |invalid_ruc|
+        @client.ruc = invalid_ruc
+        expect(@client).to be_valid
+      end      
+    end
   end
 
 end
