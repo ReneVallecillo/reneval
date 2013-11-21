@@ -1,7 +1,10 @@
 Reneval::Application.routes.draw do
+
   devise_for :users
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
+
+  resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
