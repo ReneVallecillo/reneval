@@ -1,5 +1,6 @@
 Reneval::Application.routes.draw do
 
+  get "dashboard/index"
   devise_for :users
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
