@@ -1,18 +1,164 @@
-<div class="cold-md-3">
-  <div class="bs-sidebar hidden-print affix"
-    <ul class="nav bs-sidenav">
-    <li class="active">
-      <a href="index.html">
-        <i class="icon-dashboard"></i>
-        <span class="menu-text"> Dashboard </span>
-      </a>
-    </li>
-    <li>
-      <a href="typography.html">
-        <i class="icon-text-width"></i>
-        <span class="menu-text"> Typography </span>
-      </a>
-    </li> 
-    </ul>
-  </div> 
+<div id="sb-menu" class="bs-sidebar hidden-print affix">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Dashboard
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Proyecto
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Calendario
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Archivos
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Notificaciones
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Ofertas Tecnicas
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Facturacion
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+        <h4 class="panel-title">
+          <a>
+            <span class="glyphicon glyphicon-folder-open"></span> Clientes
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="list-group" id="accordion">
+          <%= link_to clients_path, class:"list-group-item" do %>
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> Nuevo </span>
+          <% end %>
+          <%= link_to new_client_path, class:"list-group-item" do %>
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> Nuevo </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" >
+        <%= link_to dashboard_index_path do  %>
+        <h4 class="panel-title">
+            <span class="glyphicon glyphicon-dashboard"></span> Tareas
+        </h4>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+        <h4 class="panel-title">
+          <a>
+            <span class="glyphicon glyphicon-folder-open"></span> Proyectos
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="list-group" id="accordion">
+          <a href="#" class="list-group-item active">
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> Dashboard </span>
+          </a>
+          <a href="#" class="list-group-item">
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> Dashboard </span>
+          </a>
+          <a href="#" class="list-group-item">
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> Dashboard </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+        <h4 class="panel-title">
+          <a>
+            <span class="glyphicon glyphicon-credit-card"></span> Facturacion
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour">
+        <h4 class="panel-title">
+          <a>
+            <span class="glyphicon glyphicon-paperclip"></span> Documentos
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse">
+        <div class="panel-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive">
+        <h4 class="panel-title">
+          <a>
+            <span class="glyphicon glyphicon-calendar"></span> Calendario
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse">
+        <div class="panel-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
