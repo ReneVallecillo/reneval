@@ -2,7 +2,7 @@
 @import "formtastic-bootstrap";
 
 body{
-  padding: 60px 0 0 0;
+  padding: 50px 0 0 0;
 }
 .home{
   text-align: center;
@@ -102,4 +102,71 @@ footer ul li {
   margin: 0;
   border-bottom: 1px solid #e5e5e5;
   position: relative;
+}
+
+#sb-menu {
+  margin-left: -200px;
+  left: 200px;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+
+  .panel{
+    border-radius:0px;
+    + .panel{
+      margin-top: 0px;
+      border-top:0px;
+    }
+  }
+
+  .list-group-item{
+    &:first-child{
+      border-radius:0px;
+    }
+
+    &:last-child{
+      border-radius:0px;
+    }
+  }
+
+  h4{
+    a{
+      span{
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .panel-heading{
+    &:hover{
+      background-color:#fff;
+    }
+    cursor: pointer;
+  }
+}
+
+.bs-sidenav{
+  li{
+    a{
+      color: rgba(255,255,255,0.4);
+
+      &:hover{
+        color: #fff;
+        background-color: rgba(255,255,255,0.2);
+      }
+    }
+  }
+}
+
+
+#page-content {
+  width: 100%;
+  padding-left:220px;
+}
+
+.inset{
+  padding:20px;
 }
