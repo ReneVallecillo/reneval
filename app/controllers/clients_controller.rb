@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @clients = Client.all
+    @clients = Client.order("name").page(params[:page]).per(5)
   end
   
   def show
