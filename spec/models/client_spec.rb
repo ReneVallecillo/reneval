@@ -2,24 +2,34 @@
 #
 # Table name: clients
 #
-#  id                  :integer          not null, primary key
-#  name                :string(255)
-#  fullname            :string(255)
-#  ruc                 :string(14)
-#  legalrepresentative :string(255)
-#  address             :string(255)
-#  web                 :string(255)
-#  created_at          :datetime
-#  updated_at          :datetime
+#  id                    :integer          not null, primary key
+#  name                  :string(255)
+#  fullname              :string(255)
+#  ruc                   :string(14)
+#  legalrepresentative   :string(255)
+#  address               :string(255)
+#  web                   :string(255)
+#  created_at            :datetime
+#  updated_at            :datetime
+#  description           :text
+#  user_id               :integer
+#  segmento_id           :integer
+#  tipo_contribuyente_id :integer
 #
 
 require 'spec_helper'
 
 describe Client do
+
+  let(:user) { FactoryGirl.create(:user) }
+  let(:segmento) { FactoryGirl.create(:segmento) }
+  let(:tipo_contribuyente) { FactoryGirl.create(:tipo_contribuyente) }
+
   before do
-    @client = Client.new(name: "Example", fullname: "Example",
+    @client = user.clients.build(name: "Example", fullname: "Example",
               ruc: "J1234567891112", legalrepresentative: "Example Representative",
-              address: "Example address", web:"www.Example.com")
+              address: "Example address", web:"www.Example.com", segmento_id: segmento.id,
+              tipo_contribuyente_id: tipo_contribuyente.id)
   end
 
   subject { @client }
@@ -29,7 +39,15 @@ describe Client do
   it { should respond_to(:ruc) }    
   it { should respond_to(:legalrepresentative) }    
   it { should respond_to(:address) }    
-  it { should respond_to(:web) }    
+  it { should respond_to(:web) }
+  
+
+  #relations
+  it { should respond_to(:user_id) }
+  it { should respond_to(:user) }
+  its(:user) { should eq user }
+  it { should respond_to(:segmento) }    
+  it { should respond_to(:tipo_contribuyente) }    
 
   it { should be_valid }
 
@@ -88,6 +106,11 @@ describe Client do
         expect(@client).to be_valid
       end      
     end
+  end
+
+  describe "when user_id is not present" do
+    before { @client.user_id = nil }
+    it { should_not be_valid }
   end
 
 end
