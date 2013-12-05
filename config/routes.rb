@@ -1,10 +1,13 @@
 Reneval::Application.routes.draw do
 
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "dashboard/index"
-  devise_for :users
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
 
+  devise_for :users
   resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
