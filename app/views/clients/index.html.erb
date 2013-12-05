@@ -1,31 +1,40 @@
-<h1>Clients#index</h1>
+<% provide(:title, "Crear Cliente Nuevo") %>
+<%= render 'layouts/sidebar' %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Razón Social</th>
-      <th>RUC</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @clients.each do |client| %>
-    <tr>
-      <td><%= client.name %></td>
-      <td><%= client.fullname %></td>
-      <td><%= client.ruc %></td>
-      <td>
-        <button class="btn btn-default">
-          <%= link_to client do %>
-          <span class="glyphicon glyphicon-eye-open"></span>
+<div id="page-content" class="inset"> 
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Listado de Clientes</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Razón Social</th>
+            <th>RUC</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.name %></td>
+            <td><%= client.fullname %></td>
+            <td><%= client.ruc %></td>
+            <td>
+              <button class="btn btn-default">
+                <%= link_to client do %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                <% end %>
+              </button>
+              <button class="btn btn-default btn-warning">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </td>
+          </tr>
           <% end %>
-        </button>
-        <button class="btn btn-default btn-warning">
-          <span class="glyphicon glyphicon-trash"></span>
-        </button>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
