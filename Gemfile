@@ -40,6 +40,10 @@ gem 'formtastic-bootstrap'
 #active admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+#kaminari
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
