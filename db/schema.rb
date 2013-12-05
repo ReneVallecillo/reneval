@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204210116) do
+ActiveRecord::Schema.define(version: 20131204230048) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
     t.string   "fullname"
-    t.string   "ruc",                 limit: 14
+    t.string   "ruc",                   limit: 14
     t.string   "legalrepresentative"
     t.string   "address"
     t.string   "web"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.integer  "user_id"
+    t.integer  "segmento_id"
+    t.integer  "tipo_contribuyente_id"
   end
 
   add_index "clients", ["name"], name: "index_clients_on_name", unique: true

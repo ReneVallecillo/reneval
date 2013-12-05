@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -27,4 +28,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :email, presence: true
+
+  #relations
+  has_many :clients
 end
