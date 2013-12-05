@@ -32,10 +32,13 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 
 #forms
-gem 'formtastic'
+gem "formtastic", "~> 2.3.0.rc2"
 
 #bootstrap 3 markup for formtastic
 gem 'formtastic-bootstrap'
+
+#active admin
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 group :doc do
