@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   def index
     @clients = Client.order("name").page(params[:page]).per(5)
@@ -14,7 +14,8 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(client_params)
+    puts current_user.to_s
+    @client = current_user.clients.build(client_params)
     if @client.save
       flash[:success] = "Se ha creado el cliente #{@client.name}"
       redirect_to @client
@@ -23,10 +24,30 @@ class ClientsController < ApplicationController
     end
   end
 
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(client_params)
+      flash[:success] = "Cliente Actualizado"
+      redirect_to @client
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @client  = Client.find(params[:id])
+  end
+
+  def destroy
+    Client.find(params[:id]).destroy
+    flash[:success] = "Cliente borrado"
+    redirect_to clients_url
+  end
+
   private
 
     def client_params
       params.require(:client).permit(:name, :fullname,:ruc,
-        :legalrepresentative, :address, :web)
+        :legalrepresentative, :address, :web, :tipo_contribuyente_id, :segmento_id)
     end
 end

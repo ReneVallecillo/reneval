@@ -1,3 +1,52 @@
-<h1>Clients#show</h1>
+<% provide(:title, "Ver Cliente") %>
+<%= render 'layouts/sidebar' %>
 
-<%= @client.name %>, <%= @client.ruc %>
+<div id="page-content" class="inset"> 
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Clients#show</h1>
+      <table class="table">
+        <tr>
+          <td>Nombre</td>
+          <td><%= @client.name %></td>
+        </tr>
+        <tr>
+          <td>RUC</td>
+          <td><%= @client.ruc %></td>
+        </tr>
+        <tr>
+          <td>Nombre Completo</td>
+          <td><%= @client.fullname %></td>
+        </tr>
+        <tr>
+          <td>Descripcion</td>
+          <td><%= @client.description %></td>
+        </tr>
+        <tr>
+          <td>Representante Legal</td>
+          <td><%= @client.legalrepresentative %></td>
+        </tr>
+        <tr>
+          <td>Direccion</td>
+          <td><%= @client.address %></td>
+        </tr>
+        <tr>
+          <td>Web</td>
+          <td><%= @client.web %></td>
+        </tr>
+        <tr>
+          <td>Tipo Contribuyente</td>
+          <td><%= @client.tipo_contribuyente.name if @client.tipo_contribuyente %></td>
+        </tr>
+        <tr>
+          <td>Segmento</td>
+          <td><%= @client.segmento.name if @client.segmento %></td>
+        </tr>
+        <tr>
+          <td>Agregado por</td>
+          <td><%= @client.user.name if @client.user %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

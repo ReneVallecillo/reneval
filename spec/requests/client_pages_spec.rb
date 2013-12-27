@@ -1,7 +1,12 @@
 require 'spec_helper'
 
 describe "Client" do
+
   subject { page }
+  before do
+      sign_in_as_a_valid_user
+  end
+
   describe "create new page" do
     before { visit new_client_path }
     it { should have_content('Crear Cliente Nuevo') }
